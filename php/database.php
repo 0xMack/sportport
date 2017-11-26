@@ -2,6 +2,7 @@
 
 function connect_db(){
     // db configuration
+
     $configs = include('config.php');
     $db_hostname = $configs['hostname'];
     $db_username = $configs['username'];

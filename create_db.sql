@@ -1,6 +1,12 @@
-CREATE DATABASE sportportdb;
+# Create db - only necessary if running this script as admin for first time
+# CREATE DATABASE sportportdb;
 
-CREATE TABLE Users
+# Creates user with username 'fakeuser' and password 'fakepassword', then gives them access to all tables in this db
+GRANT ALL PRIVILEGES ON sportportdb.* To 'fakeuser'@'localhost' IDENTIFIED BY 'fakepassword';
+
+
+# create users table
+CREATE TABLE users
 (
     UserID INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     LastName NVARCHAR(255) NOT NULL,
@@ -13,14 +19,8 @@ CREATE TABLE Users
 CREATE UNIQUE INDEX Users_UserID_uindex ON Users (UserID);
 CREATE UNIQUE INDEX Users_Email_uindex ON Users (Email);
 
-CREATE TABLE teams
-(
-    TeamID INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
-    TeamName NVARCHAR(255) NOT NULL
-);
-CREATE UNIQUE INDEX teams_TeamID_uindex ON teams (TeamID);
-CREATE UNIQUE INDEX teams_TeamName_uindex ON teams (TeamName);
 
+# Create sports table
 CREATE TABLE sports
 (
     SportID INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
@@ -29,26 +29,43 @@ CREATE TABLE sports
 CREATE UNIQUE INDEX sports_SportID_uindex ON sports (SportID);
 CREATE UNIQUE INDEX sports_SportName_uindex ON sports (SportName);
 
-# Add foreign keys between tables
-ALTER TABLE teams
-    ADD CONSTRAINT teams_leagues_LeagueID_fk
-FOREIGN KEY (TeamID) REFERENCES leagues (LeagueID);
-ALTER TABLE leagues
-    ADD CONSTRAINT leagues_sports_SportID_fk
-FOREIGN KEY (LeagueID) REFERENCES sports (SportID);
 
+# Create leagues table
+CREATE TABLE leagues
+(
+    LeagueID INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    LeagueName NVARCHAR(255) NOT NULL,
+    SportID INT NOT NULL,
+    CONSTRAINT leagues_sports_SportID_fk FOREIGN KEY (SportID) REFERENCES sports (SportID)
+);
+CREATE UNIQUE INDEX leagues_LeagueID_uindex ON leagues (LeagueID);
+
+
+# Create teams table
+CREATE TABLE teams
+(
+    TeamID INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    TeamName NVARCHAR(255) NOT NULL,
+    LeagueID INT NOT NULL,
+    CONSTRAINT teams_leagues_LeagueID_fk FOREIGN KEY (LeagueID) REFERENCES leagues (LeagueID)
+);
+CREATE UNIQUE INDEX teams_TeamID_uindex ON teams (TeamID);
+CREATE UNIQUE INDEX teams_TeamName_uindex ON teams (TeamName);
+
+
+# Create team_membership table
 CREATE TABLE team_membership
 (
     TeamID INT NOT NULL,
-    CONSTRAINT team_membership_teams_TeamID_fk FOREIGN KEY (TeamID) REFERENCES teams (TeamID)
+    UserID INT NOT NULL,
+    CONSTRAINT team_membership_teams_TeamID_fk FOREIGN KEY (TeamID) REFERENCES teams (TeamID),
+    CONSTRAINT team_membership_users_UserID_fk FOREIGN KEY (UserID) REFERENCES users (UserID)
 );
 CREATE UNIQUE INDEX team_membership_TeamID_uindex ON team_membership (TeamID);
-ALTER TABLE team_membership ADD UserID INT NOT NULL;
 CREATE UNIQUE INDEX team_membership_UserID_uindex ON team_membership (UserID);
-ALTER TABLE team_membership
-    ADD CONSTRAINT team_membership_users_UserID_fk
-FOREIGN KEY (UserID) REFERENCES users (UserID);
 
+
+# Create games table
 CREATE TABLE games
 (
     GameID INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
@@ -63,5 +80,3 @@ CREATE TABLE games
 CREATE UNIQUE INDEX games_GameID_uindex ON games (GameID);
 CREATE UNIQUE INDEX games_AteamID_uindex ON games (AteamID);
 CREATE UNIQUE INDEX games_BteamID_uindex ON games (BteamID);
-
-GRANT ALL PRIVILEGES ON sportportdb.* To 'fakeuser'@'localhost' IDENTIFIED BY 'fakepassword';

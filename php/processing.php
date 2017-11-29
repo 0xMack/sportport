@@ -1,29 +1,32 @@
 <?php
-class User{ //Stores user information
-    public $userID;
-    public $email;
-    public $firstName;
-    public $lastName;
-    public $password;
-    public $salt;
+/**
+ * Created by PhpStorm.
+ * User: mackp
+ * Date: 2017-11-19
+ * Time: 10:59 PM
+ */
 
-    public function __construct($email, $firstName, $lastName, $password){
-        $this->firstName = $firstName;
-        $this->lastName = $lastName;
-        $this->email = $email;
+require_once('database.php');
+require_once('user.php');
 
-        $this->salt = random_bytes(64);
-        $this->password = password_hash($password, PASSWORD_BCRYPT, ['salt' => $this->salt]);
-    }
+function hash_password($password, $salt){
+    return password_hash($password, PASSWORD_BCRYPT, ['salt' => $salt]);
 }
 
-include('database.php');
+function valid_creds($user, $password_attempt){
+    $password_attempt = hash_password($password_attempt, $user->salt);
+    $valid = ($password_attempt == $user->password);
+    return $valid;
+}
+
 $conn = connect_db();
+session_start();
 $message = "Message is unchanged!";
 
 if($_POST['formSubmit'] == "Register"){
     $firstName = $_POST['firstName'];
     $lastName = $_POST['lastName'];
+    $dob = $_POST['dateOfBirth'];
     $email = $_POST['email'];
     $password = $_POST['password'];
     $confirm = $_POST['confirm'];
@@ -31,14 +34,36 @@ if($_POST['formSubmit'] == "Register"){
     if(user_exists($conn, $email)){
         $message = "There is already an account for the email you provided\n";
     }
-    $user = new User($email, $firstName, $lastName, $password);
-    if(create_user($conn, $user)){
-        $message="Congratulations on your new account!";
+    else{
+        $user = new User($email, $firstName, $lastName, $dob);
+        $user->init_password($password);
+        if(create_user($conn, $user)){
+            $message="Congratulations on your new account!";
+        }
     }
 }
 else if($_POST['formSubmit'] == "Login"){
-    $email = $_POST['loginEmail'];
-    $password = $_POST['loginPassword'];
+    $email_attempt = $_POST['loginEmail'];
+    $password_attempt = $_POST['loginPassword'];
+    $user = get_user_by_email($conn, $email_attempt);
+
+    if($user != null && valid_creds($user, $password_attempt)){
+        $_SESSION['loggedin'] = true;
+        $_SESSION['email'] = $user->email;
+        $_SESSION['firstName'] = $user->firstName;
+        header("Location: ../loggedin.php");
+    }
+    else{
+        $message = "Invalid Credentials!";
+    }
+}
+else if($_POST['formSubmit'] == "Sign Out"){
+    if(session_destroy()){
+        $message = "Session has been terminated";
+    }
+    else{
+        $message = "Error terminating session!";
+    }
 
 }
 

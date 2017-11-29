@@ -7,7 +7,7 @@
  */
 
 require_once('database.php');
-require_once('user.php');
+require_once('dto/user.php');
 
 function hash_password($password, $salt){
     return password_hash($password, PASSWORD_BCRYPT, ['salt' => $salt]);
@@ -51,7 +51,7 @@ else if($_POST['formSubmit'] == "Login"){
         $_SESSION['loggedin'] = true;
         $_SESSION['email'] = $user->email;
         $_SESSION['firstName'] = $user->firstName;
-        header("Location: ../loggedin.php");
+        header("Location: ../profile.html");
     }
     else{
         $message = "Invalid Credentials!";
@@ -64,7 +64,6 @@ else if($_POST['formSubmit'] == "Sign Out"){
     else{
         $message = "Error terminating session!";
     }
-
 }
 
 echo $message

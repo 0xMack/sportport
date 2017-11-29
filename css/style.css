@@ -36,6 +36,13 @@ h1 {
 	padding-bottom: 15px;
 	border-bottom: solid #eee thin;
 }
+h3 {
+	font-weight: 300;
+	font-family: Avenir, 'Helvetica Neue', Helvetica, Verdana, sans-serif;
+	text-align: center;
+	padding-bottom: 15px;
+	border-bottom: solid #eee thin;
+}
 form {
 	position: relative;
 	width: 100%;
@@ -103,5 +110,7 @@ label input:focus {
 }
 
 iframe {
-	display: none;
+	/*display: none;*/
+    text-align: center;
+    width: 100%;
 }

@@ -23,13 +23,7 @@ function connect_db(){
         die("Unable to connect to the database!\n");
     }
 }
-function user_db_to_dto($user_db){
-    $user_dto = new User($user_db['Email'], $user_db['FirstName'], $user_db['LastName'], $user_db['DateOfBirth']);
-    $user_dto->userID = trim($user_db['UserID']);
-    $user_dto->password = trim($user_db['PasswordHash']);
-    $user_dto->salt = trim($user_db['Salt']);
-    return $user_dto;
-}
+
 function get_user_by_email($conn, $email){
     $stmt = $conn->prepare("SELECT * from users WHERE Email=?");
     $stmt->execute([$email]);
@@ -42,6 +36,19 @@ function get_user_by_email($conn, $email){
         return null;
     }
 }
+
+function get_league_by_id($conn, $leagueID){
+
+}
+
+function get_team_by_id($conn, $teamID){
+
+}
+
+function get_sport_by_id($conn, $sportID){
+
+}
+
 //function get_user_by_id($conn, $userID){
 //    $stmt = $conn->prepare("SELECT * from users WHERE UserID=?");
 //    $stmt->execute([$userID]);

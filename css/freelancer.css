@@ -283,3 +283,12 @@ a {
   .btn-secondary:hover, .btn-secondary:focus, .btn-secondary:active {
     background-color: #1a252f;
     border-color: #1a252f; }
+
+#footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  text-align: center;
+}

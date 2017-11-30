@@ -49,8 +49,7 @@ else if($_POST['formSubmit'] == "Login"){
 
     if($user != null && valid_creds($user, $password_attempt)){
         $_SESSION['loggedin'] = true;
-        $_SESSION['email'] = $user->email;
-        $_SESSION['firstName'] = $user->firstName;
+        $_SESSION['userID'] = $user->userID;
         header("Location: ../profile.html");
     }
     else{

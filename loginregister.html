@@ -58,7 +58,7 @@
         <h1>Login or Register</h1>
         <section id="loginForm">
             <h3>Login</h3>
-            <form method="post" id="login" target="frame" action="php/processing.php">
+            <form method="post" id="login" action="php/processing.php">
                 <fieldset>
                     <label for="loginEmail">Email:
                         <input type="text" maxlength="32" name="loginEmail" id="loginEmail">
@@ -72,7 +72,7 @@
         </section>
         <section id="registrationForm">
             <h3>Register</h3>
-            <form method="post" id="registration" target="frame" action="php/processing.php" onsubmit="return validateForm()">
+            <form method="post" id="registration" action="php/processing.php" onsubmit="return validateForm()">
                 <fieldset>
                     <label for="firstName">First Name:
                         <input type="text" maxlength="32" name="firstName" id="firstName">
@@ -107,10 +107,6 @@
                 <input type="submit" name="formSubmit" class="formSubmit" id="submit" value="Register">
             </form>
         </section>
-        <div>
-            <h3>Response From Server:</h3>
-            <iframe name="frame"></iframe>
-        </div>
         <script src="js/validation.js"></script>
     </div>
 </section>

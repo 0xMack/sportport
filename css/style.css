@@ -108,9 +108,3 @@ label input:focus {
 	background: #27ae60;
 	border: solid #ecf0f1 thin;
 }
-
-iframe {
-	/*display: none;*/
-    text-align: center;
-    width: 100%;
-}

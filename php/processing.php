@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: mackp
- * Date: 2017-11-19
- * Time: 10:59 PM
- */
 
 require_once('database.php');
 require_once('dto/user.php');

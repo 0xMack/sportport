@@ -1,9 +1,10 @@
 # Create db - only necessary if running this script as admin for first time
-# CREATE DATABASE sportportdb;
+CREATE DATABASE sportportdb;
 
 # Creates user with username 'fakeuser' and password 'fakepassword', then gives them access to all tables in this db
 GRANT ALL PRIVILEGES ON sportportdb.* To 'fakeuser'@'localhost' IDENTIFIED BY 'fakepassword';
 
+USE sportportdb;
 
 # create users table
 CREATE TABLE users

@@ -1,11 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: mackp
- * Date: 2017-11-23
- * Time: 8:12 PM
- */
-
 function connect_db(){
     // db configuration
     $configs = include('config.php');

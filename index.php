@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="Ahmed Ghandar, Matt Smith, Brandon Hussey, Ian Dawson, Mack Preston, Mohammed Al-Ghamdi">
 
-    <title>SportPort - #1 Website For Organizing Intramural Sports</title>
+    <title>Sport Port</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -24,13 +24,17 @@
     <link href="css/freelancer.min.css" rel="stylesheet">
 
   </head>
+  <?php
+    session_start();
+
+  ?>
 
   <body id="page-top">
 
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav">
       <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="index.html">Sport Port</a>
+        <a class="navbar-brand js-scroll-trigger" href="index.php">Sport Port</a>
         <button class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           Menu
           <i class="fa fa-bars"></i>
@@ -67,69 +71,19 @@
         <h2 class="text-center text-uppercase text-secondary mb-0">Offered Sports</h2>
         <hr class="star-dark mb-5">
         <div class="row">
-          <?php
-          echo "<div><h1>Testing!123!</h1></div>
-          ?>
-          <div class="col-md-6 col-lg-4">
-            <a class="d-block mx-auto" href="leagues.html?sport='soccer'">
-              <div class="portfolio-item-caption d-flex position-absolute h-100 w-100">
-                <h3>Testing!</h3>
-              </div>
-              <img class="img-fluid" src="img/sports/football.png" alt="">
-            </a>
-          </div>
-
-          <div class="col-md-6 col-lg-4">
-            <a class="portfolio-item d-block mx-auto" href="#portfolio-modal-2">
-              <div class="portfolio-item-caption d-flex position-absolute h-100 w-100">
-                <div class="portfolio-item-caption-content my-auto w-100 text-center text-white">
-                  <i class="fa fa-search-plus fa-3x"></i>
-                </div>
-              </div>
-              <img class="img-fluid" src="img/sports/basketball.png" alt="">
-            </a>
-          </div>
-
-          <div class="col-md-6 col-lg-4">
-            <a class="portfolio-item d-block mx-auto" href="#portfolio-modal-3">
-              <div class="portfolio-item-caption d-flex position-absolute h-100 w-100">
-                <div class="portfolio-item-caption-content my-auto w-100 text-center text-white">
-                  <i class="fa fa-search-plus fa-3x"></i>
-                </div>
-              </div>
-              <img class="img-fluid" src="img/sports/baseball.png" alt="">
-            </a>
-          </div>
-          <div class="col-md-6 col-lg-4">
-            <a class="portfolio-item d-block mx-auto" href="#portfolio-modal-4">
-              <div class="portfolio-item-caption d-flex position-absolute h-100 w-100">
-                <div class="portfolio-item-caption-content my-auto w-100 text-center text-white">
-                  <i class="fa fa-search-plus fa-3x"></i>
-                </div>
-              </div>
-              <img class="img-fluid" src="img/sports/volleyball.png" alt="">
-            </a>
-          </div>
-          <div class="col-md-6 col-lg-4">
-            <a class="portfolio-item d-block mx-auto" href="#portfolio-modal-5">
-              <div class="portfolio-item-caption d-flex position-absolute h-100 w-100">
-                <div class="portfolio-item-caption-content my-auto w-100 text-center text-white">
-                  <i class="fa fa-search-plus fa-3x"></i>
-                </div>
-              </div>
-              <img class="img-fluid" src="img/sports/hockey.png" alt="">
-            </a>
-          </div>
-          <div class="col-md-6 col-lg-4">
-            <a class="portfolio-item d-block mx-auto" href="#portfolio-modal-6">
-              <div class="portfolio-item-caption d-flex position-absolute h-100 w-100">
-                <div class="portfolio-item-caption-content my-auto w-100 text-center text-white">
-                  <i class="fa fa-search-plus fa-3x"></i>
-                </div>
-              </div>
-              <img class="img-fluid" src="img/sports/lacrosse.png" alt="">
-            </a>
-          </div>
+            <?php
+                $sports = ['soccer', 'basketball', 'baseball', 'volleyball', 'hockey', 'lacrosse'];
+                foreach($sports as $sport) {
+                    echo "  <div class='col-md-6 col-lg-4'>
+                                <a class='d-block mx-auto' href='leagues.html?sport=$sport'>
+                                    <img class='img-fluid' src='img/sports/$sport.png' alt='$sport'>
+                                    <div class='sport-caption d-flex position-absolute h-100 w-100'>
+                                        <h3>$sport</h3>
+                                    </div>
+                                </a>
+                            </div>";
+                }
+            ?>
         </div>
       </div>
     </section>

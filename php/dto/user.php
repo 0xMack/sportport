@@ -1,11 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: mackp
- * Date: 2017-11-27
- * Time: 7:53 PM
- */
-
 
 class User{ //Stores user information
     public $userID;

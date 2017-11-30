@@ -39,6 +39,9 @@ if($_POST['formSubmit'] == "Register"){
         $user->init_password($password);
         if(create_user($conn, $user)){
             $message="Congratulations on your new account!";
+            $_SESSION['loggedin'] = true;
+            $_SESSION['userID'] = $user->userID;
+            header("Location: ../profile.html");
         }
     }
 }

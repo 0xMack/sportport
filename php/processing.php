@@ -35,7 +35,7 @@ if($_POST['formSubmit'] == "Register"){
             $message="Congratulations on your new account!";
             $_SESSION['loggedin'] = true;
             $_SESSION['userID'] = $user->userID;
-            header("Location: ../profile.html");
+            header("Location: ../profile.php");
         }
     }
 }
@@ -47,7 +47,7 @@ else if($_POST['formSubmit'] == "Login"){
     if($user != null && valid_creds($user, $password_attempt)){
         $_SESSION['loggedin'] = true;
         $_SESSION['userID'] = $user->userID;
-        header("Location: ../profile.html");
+        header("Location: ../profile.php");
     }
     else{
         $message = "Invalid Credentials!";

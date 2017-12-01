@@ -15,3 +15,4 @@ function league_db_to_dto($league_db){
     $league_dto->leagueID = trim($league_db['LeagueID']);
     return $league_dto;
 }
+

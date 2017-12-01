@@ -51,10 +51,24 @@
       </div>
     </nav>
 
-<section style=>
-<h1>Leagues: This is a page that displays all the Leagues</h1>
-    <p> djhew mew jhe mnes fhewfemnbw dnbmedewm henwfeh fne fehw few fhew few fhjer fm fsjgh fshj cfshke dewd sjc sdgnc sdm vdsjc </p>
-</section>
+  <section>
+    <div class="Header" id="listHeader">
+      <h2>Leagues</h2>
+    </div>
+  <div class="info" id="teamInfo">
+    <?php
+            echo "  <div class='col-md-6 col-lg-4' id=sportPicture>
+                        <a class='d-block mx-auto' href='leagues.php?sport=$sport'>
+                            <img class='img-fluid' src='img/sports/$sport.png' alt='$sport'>
+                            <div class='sport-caption d-flex position-absolute h-50 w-50'>
+                                <h3>$sport</h3>
+                            </div>
+                        </a>
+                    </div>";
+      ?>
+      <h3>League Name</h3>
+    </div>
+  </section>
 
     <footer class="copyright py-4 text-center text-white"  id= "footer">
       <div class="container">

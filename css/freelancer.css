@@ -309,6 +309,7 @@ a {
   border-width: 5px;
   text-align: center;
 }
-#sportPicture{
-  float:left;
+.sportPicture{
+  height:20%;
+  width: 20%;
 }

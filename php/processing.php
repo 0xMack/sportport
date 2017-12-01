@@ -53,14 +53,7 @@ else if($_POST['formSubmit'] == "Login"){
         $message = "Invalid Credentials!";
     }
 }
-else if($_POST['formSubmit'] == "Sign Out"){
-    if(session_destroy()){
-        $message = "Session has been terminated";
-    }
-    else{
-        $message = "Error terminating session!";
-    }
-}
+
 
 echo $message
 

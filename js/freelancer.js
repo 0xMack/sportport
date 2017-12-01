@@ -49,17 +49,6 @@
   // Collapse the navbar when page is scrolled
   $(window).scroll(navbarCollapse);
 
-  // Modal popup$(function () {
-  $('.sports-item').magnificPopup({
-    type: 'inline',
-    preloader: false,
-    focus: '#username',
-    modal: true
-  });
-  $(document).on('click', '.sports-modal-dismiss', function(e) {
-    e.preventDefault();
-    $.magnificPopup.close();
-  });
 
   // Floating label headings for the contact form
   $(function() {

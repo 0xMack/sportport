@@ -3,9 +3,8 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <section>
     <div id="page">
-        <h1>Login or Register</h1>
         <section id="loginForm">
-            <h3>Login</h3>
+        <h3>Login</h3>
             <form method="post" id="login" action="php/processing.php">
                 <fieldset>
                     <label for="loginEmail">Email:
@@ -56,6 +55,7 @@
             </form>
         </section>
         <script src="js/validation.js"></script>
+
     </div>
 </section>
 

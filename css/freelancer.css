@@ -323,3 +323,12 @@ a {
   padding: 30px;
   vertical-align: top;
 }
+
+.title-home{
+    background: center no-repeat url("../img/HomeBackground.jpeg");
+}
+.title-home-margins{
+    margin-top: 7%;
+    margin-bottom: 7%;
+    text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+}

@@ -1,9 +1,8 @@
 <?php include('includes/header.php'); ?>
 
     <!-- Header -->
-    <header class="masthead bg-primary text-white text-center">
-      <div class="container">
-        <img class="img-fluid mb-5 d-block mx-auto" src="img/soccer.jpeg" alt="soccer picture" id="soc">
+    <header class="title-home masthead bg-primary text-white text-center ">
+      <div class="container title-home-margins">
         <h1 class="text-uppercase mb-0">Sport Port</h1>
         <hr class="star-light">
         <h2 class="font-weight-light mb-0">Join Leagues - Make Teams - Keep Track of Your Stats</h2>

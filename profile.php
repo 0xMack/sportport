@@ -6,7 +6,9 @@
                 background-color:seagreen;">
         <div style="">
             <img src ="img/profilePic.png" alt="profilePic" width="175" height="175" style="float: left; margin-right: 20px; position: relative; left:10px; border: 1px solid black; border-radius: 50%">
-            <h1 style="color:white; ">Jacob Mcdonalds</h1>
+            <?php
+                echo "<h1 style='color:white;'>$firstName $lastName</h1>";
+            ?>
             <img src="img/Male.png" alt="male" width="30" height="30">
             <div style="color: whitesmoke">
 
@@ -21,11 +23,11 @@
             </div>
             <div>
                 <img src="img/Team.png" width="100" height="100" >
-                <a href="myteams.php" target="_blank" style=" font: italic bold 12px/30px Georgia, serif;float:inherit; font-size: 20px;link {color: cornflowerblue;
+                <a href="myteams.php" style=" font: italic bold 12px/30px Georgia, serif;float:inherit; font-size: 20px;link {color: cornflowerblue;
     background-color: transparent;
     text-decoration: none;}   "> &#9830; My Team</a>
                 <img src="img/cup.png" width="100" height="100" style="margin-left: 400px;">
-                <a href="leagues.php" target="_blank" style=" font: italic bold 12px/30px Georgia, serif;float:inherit; font-size: 20px;link {color: cornflowerblue;
+                <a href="leagues.php?sport=soccer" style=" font: italic bold 12px/30px Georgia, serif;float:inherit; font-size: 20px;link {color: cornflowerblue;
     background-color: transparent;
     text-decoration: none;}   "> &#9830; Leagues</a>
             </div>

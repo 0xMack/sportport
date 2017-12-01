@@ -2,6 +2,8 @@
     session_start();
     if(isset($_SESSION['loggedin'])){
         $loggedin = true;
+        $firstName = $_SESSION['firstName'];
+        $lastName = $_SESSION['lastName'];
     }
     else{
         $loggedin = false;

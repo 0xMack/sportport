@@ -332,3 +332,8 @@ a {
     margin-bottom: 7%;
     text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
 }
+.sport-pic{
+  text-align: center;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}

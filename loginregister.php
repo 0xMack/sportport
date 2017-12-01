@@ -1,7 +1,7 @@
 <?php include('includes/header.php'); ?>
     <!-- Custom styles created by group 4-->
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <section style=>
+    <section>
     <div id="page">
         <h1>Login or Register</h1>
         <section id="loginForm">

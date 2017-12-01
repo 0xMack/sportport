@@ -1,8 +1,9 @@
 <?php include('includes/header.php'); ?>
 
+<div id="page">
     <section style="margin-top:50px;
-                margin-right: 140px;
-                margin-left: 140px;
+                /*margin-right: 140px;*/
+                /*margin-left: 140px;*/
                 background-color:seagreen;">
         <div style="">
             <img src ="img/profilePic.png" alt="profilePic" width="175" height="175" style="float: left; margin-right: 20px; position: relative; left:10px; border: 1px solid black; border-radius: 50%">
@@ -32,7 +33,6 @@
     text-decoration: none;}   "> &#9830; Leagues</a>
             </div>
         </div>
-
-    </section>
-
+<!--    </section>-->
+<div>
 <?php include('includes/footer.php'); ?>

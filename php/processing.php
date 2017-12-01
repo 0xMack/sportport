@@ -35,6 +35,8 @@ if($_POST['formSubmit'] == "Register"){
             $message="Congratulations on your new account!";
             $_SESSION['loggedin'] = true;
             $_SESSION['userID'] = $user->userID;
+            $_SESSION['firstName'] = $user->firstName;
+            $_SESSION['lastName'] = $user->lastName;
             header("Location: ../profile.php");
         }
     }

@@ -1,46 +1,54 @@
 <?php include('includes/header.php'); ?>
 
-  <section>
-    <div class="Header" id="listHeader">
+  <section id="Leagues">
+    <div class="jumbotron" id="LeaguesHeader">
       <h2>Leagues</h2>
     </div>
       <?php
         $sport = $_GET['sport'];
 
-            echo " <div class=\"info\" id=\"teamInfo\">
-                    <div class='sportPicture col-md-6 col-lg-4'>
-                        <a class='d-block mx-auto' href='leagues.php?sport=$sport'>
-                            <img class='img-fluid' src='img/sports/$sport.png' alt='$sport'>
-                            <div class='sport-caption d-flex position-absolute h-100 w-100'>
-                                <h3>$sport</h3>
+            echo " <div class=\"info\">
+
                             </div>
                         </a>
                     </div>
-                   <h3>League Name</h3>
                    <table class=\"table\">
                       <thead>
                         <tr>
-                            <th>Rank</th>
-                            <th>Team Name</th>
-                            <th></th>
+                            <th>Sport</th>
+                            <th>League Name</th>
+                            <th>League Info</th>
+                            <th>Create Team</th>
                         </tr>
                       </thead>
                       <tbody>
                         <tr>
-                            <th scope=\"row\">1</th>
-                            <td>Dal CS</td>
-                            <td><a href=\"team.php?teamid=1\" type=\"button\" class=\"btn btn-info\">Team info</a></td>
+
+                            <td><div class='sportPicture col-md-1 col-lg-1'>
+                            <img class='img-fluid' src='img/sports/$sport.png' alt='$sport'>
+                            </div></td>
+                            <td>Some Name</td>
+                            <td><a href=\"team.php?teamid=1\" type=\"button\" class=\"btn btn-info\">League Info</a></td>
+                            <td><a href=\"team.php?teamid=1\" type=\"button\" class=\"btn btn-info\">Create Team</a></td>
+
                         </tr>
                         <tr>
-                            <th scope=\"row\">2</th>
-                            <td>Geology Rocks!</td>
-                            <td><a href=\"team.php?teamid=2\" type=\"button\" class=\"btn btn-info\">Team info</a></td>
-                        </tr>
+                            <td><div class='sportPicture col-md-1 col-lg-1'>
+                            <img class='img-fluid' src='img/sports/$sport.png' alt='$sport'>
+                            </div></td>
+                            <td>Some Name</td>
+                            <td><a href=\"team.php?teamid=1\" type=\"button\" class=\"btn btn-info\">League Info</a></td>
+                            <td><a href=\"team.php?teamid=1\" type=\"button\" class=\"btn btn-info\">Create Team</a></td>
+                            </tr>
                         <tr>
-                            <th scope=\"row\">3</th>
-                            <td>Bob's Team</td>
-                            <td><a href=\"team.php?teamid=3\" type=\"button\" class=\"btn btn-info\">Team info</a></td>
-                        </tr>
+
+                            <td><div class='sportPicture col-md-1 col-lg-1'>
+                            <img class='img-fluid' src='img/sports/$sport.png' alt='$sport'>
+                            </div></td>
+                            <td>Some Name</td>
+                            <td><a href=\"team.php?teamid=1\" type=\"button\" class=\"btn btn-info\">League Info</a></td>
+                            <td><a href=\"team.php?teamid=1\" type=\"button\" class=\"btn btn-info\">Create Team</a></td>
+                            </tr>
                       </tbody>
                   </table>
                    </div>";

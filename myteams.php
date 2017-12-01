@@ -23,6 +23,17 @@
     <!-- Custom styles for this template -->
     <link href="css/freelancer.css" rel="stylesheet">
 
+    <style>
+
+      table#main{
+        border: 5px solid black
+      }
+      th {
+        text-align: left;
+      }
+    </style>
+
+
   </head>
 
   <body id="page-top">
@@ -53,7 +64,103 @@
 
 <section style=>
     <h1>My Teams</h1>
-    <p>All teams a user is a part of. Will include a schedule, standings maybe?</p>
+    <table style="width:100%" id="main">
+      <tr>
+        <th rowspan="3"><img src="img/sports/soccer.png" alt="soccer" height=100 width=100></th>
+        <th>Soccer</th>
+        <th>Dalhousie Intramurals</th>
+      </tr>
+      <tr>
+        <td>Recreational</td>
+        <td>Next Game: TBA</td>
+      </tr>
+      <tr>
+        <td>
+          <table>
+            <tr>
+              <th>Team Roster</th>
+            </tr>
+            <tr>
+              <td>Bob</td>
+            </tr>
+            <tr>
+              <td>Suzie</td>
+            </tr>
+            <tr>
+              <td>Sarah</td>
+            </tr>
+            <tr>
+              <td>Jim</td>
+            </tr>
+            <tr>
+              <td>Tom</td>
+            </tr>
+            <tr>
+              <td>Dennis</td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table>
+            <tr>
+              <th>Captain</th>
+            </tr>
+            <tr>
+              <td>Bob</td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+    <br/>
+    <table style="width:100%" id="main">
+      <tr>
+        <th rowspan="3"><img src="img/sports/basketball.png" alt="basketball" height=100 width=100></th>
+        <th>Basketball</th>
+        <th>Dalhousie Intramurals</th>
+      </tr>
+      <tr>
+        <td>Recreational</td>
+        <td>Next Game: TBA</td>
+      </tr>
+      <tr>
+        <td>
+          <table>
+            <tr>
+              <th>Team Roster</th>
+            </tr>
+            <tr>
+              <td>Bob</td>
+            </tr>
+            <tr>
+              <td>Suzie</td>
+            </tr>
+            <tr>
+              <td>Sarah</td>
+            </tr>
+            <tr>
+              <td>Jim</td>
+            </tr>
+            <tr>
+              <td>Tom</td>
+            </tr>
+            <tr>
+              <td>Dennis</td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table>
+            <tr>
+              <th>Captain</th>
+            </tr>
+            <tr>
+              <td>Bob</td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
 </section>
 
     <footer class="copyright py-4 text-center text-white" id="footer">

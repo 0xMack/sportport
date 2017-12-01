@@ -68,8 +68,35 @@
                         </a>
                     </div>
                    <h3>League Name</h3>
+                   <table class=\"table\">
+                      <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>Team Name</th>
+                            <th></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                            <th scope=\"row\">1</th>
+                            <td>Dal CS</td>
+                            <td><a href=\"team.php?teamid=1\" type=\"button\" class=\"btn btn-info\">Team info</a></td>
+                        </tr>
+                        <tr>
+                            <th scope=\"row\">2</th>
+                            <td>Geology Rocks!</td>
+                            <td><a href=\"team.php?teamid=2\" type=\"button\" class=\"btn btn-info\">Team info</a></td>
+                        </tr>
+                        <tr>
+                            <th scope=\"row\">3</th>
+                            <td>Bob's Team</td>
+                            <td><a href=\"team.php?teamid=3\" type=\"button\" class=\"btn btn-info\">Team info</a></td>
+                        </tr>
+                      </tbody>
+                  </table>
                    </div>";
       ?>
+
   </section>
 
     <footer class="copyright py-4 text-center text-white"  id= "footer">

@@ -24,6 +24,10 @@
     <link href="css/freelancer.css" rel="stylesheet">
 
     <style>
+
+      table {
+        border: 5px solid black
+      }
       th {
         text-align: left;
       }
@@ -71,7 +75,23 @@
         <td>Next Game: TBA</td>
       </tr>
       <tr>
-        <td rowspan="8">Team Roster</td>
+        <td>Team Roster</td>
+        <td>Capitan</td>
+      </tr>
+    </table>
+    <br/>
+    <table style="width:100%">
+      <tr>
+        <th rowspan="3"><img src="img/sports/basketball.png" alt="basketball" height=100 width=100></th>
+        <th>Basketball</th>
+        <th>Dalhousie Intramurals</th>
+      </tr>
+      <tr>
+        <td>Recreational</td>
+        <td>Next Game: TBA</td>
+      </tr>
+      <tr>
+        <td>Team Roster</td>
         <td>Capitan</td>
       </tr>
     </table>

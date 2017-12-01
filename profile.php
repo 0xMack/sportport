@@ -50,7 +50,8 @@
 
 <section style=>
 <h1>Profile</h1>
-    <p>User profile: Link to myTeams will show here</p>
+    <p>User profile: Link to myTeams will show here: </p>
+    <a href="myTeams.php"> myTeams </a>
 </section>
 
     <footer class="copyright py-4 text-center text-white" id="footer">

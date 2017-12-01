@@ -22,9 +22,7 @@
                                 <a class='d-block mx-auto' href='leagues.php?sport=$sport'>
                                     <div class='sport-pic'>
                                         <img class='img-fluid' src='img/sports/$sport.png' alt='$sport'>
-                                    </div>
-                                    <div class='sport-caption d-flex position-absolute h-100 w-100'>
-                                        <h3>$sport</h3>
+                                        <h3 class='sport-caption'>$sport</h3>
                                     </div>
                                 </a>
                             </div>";

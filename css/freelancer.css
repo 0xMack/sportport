@@ -148,30 +148,30 @@ header.masthead {
     header.masthead h2 {
       font-size: 1.75em; } }
 
-.portfolio {
+.sports {
   margin-bottom: -15px; }
-  .portfolio .portfolio-item {
+  .sports .sports-item {
     position: relative;
     display: block;
     max-width: 25rem;
     margin-bottom: 15px; }
-    .portfolio .portfolio-item .portfolio-item-caption {
+    .sports .sports-item .sports-item-caption {
       -webkit-transition: all ease 0.5s;
       -moz-transition: all ease 0.5s;
       transition: all ease 0.5s;
       opacity: 0;
       background-color: rgba(24, 188, 156, 0.9); }
-      .portfolio .portfolio-item .portfolio-item-caption:hover {
+      .sports .sports-item .sports-item-caption:hover {
         opacity: 1; }
-      .portfolio .portfolio-item .portfolio-item-caption .portfolio-item-caption-content {
+      .sports .sports-item .sports-item-caption .sports-item-caption-content {
         font-size: 1.5rem; }
   @media (min-width: 576px) {
-    .portfolio {
+    .sports {
       margin-bottom: -30px; }
-      .portfolio .portfolio-item {
+      .sports .sports-item {
         margin-bottom: 30px; } }
 
-.portfolio-modal .portfolio-modal-dialog {
+.sports-modal .sports-modal-dialog {
   padding: 3rem 1rem;
   min-height: calc(100vh - 2rem);
   margin: 1rem calc(1rem - 8px);
@@ -180,21 +180,21 @@ header.masthead {
   -moz-box-shadow: 0 0 3rem 1rem rgba(0, 0, 0, 0.5);
   -webkit-box-shadow: 0 0 3rem 1rem rgba(0, 0, 0, 0.5);
   box-shadow: 0 0 3rem 1rem rgba(0, 0, 0, 0.5); }
-  .portfolio-modal .portfolio-modal-dialog .close-button {
+  .sports-modal .sports-modal-dialog .close-button {
     position: absolute;
     top: 2rem;
     right: 2rem; }
-    .portfolio-modal .portfolio-modal-dialog .close-button i {
+    .sports-modal .sports-modal-dialog .close-button i {
       line-height: 38px; }
-  .portfolio-modal .portfolio-modal-dialog h2 {
+  .sports-modal .sports-modal-dialog h2 {
     font-size: 2rem; }
 
 @media (min-width: 768px) {
-  .portfolio-modal .portfolio-modal-dialog {
+  .sports-modal .sports-modal-dialog {
     min-height: 100vh;
     padding: 5rem;
     margin: 3rem calc(3rem - 8px); }
-    .portfolio-modal .portfolio-modal-dialog h2 {
+    .sports-modal .sports-modal-dialog h2 {
       font-size: 3rem; } }
 
 .floating-label-form-group {
@@ -289,6 +289,5 @@ a {
   right: 0;
   bottom: 0;
   left: 0;
-  padding: 1rem;
   text-align: center;
 }

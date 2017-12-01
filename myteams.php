@@ -76,7 +76,7 @@
       </tr>
       <tr>
         <td>Team Roster</td>
-        <td>Capitan</td>
+        <td>Captain</td>
       </tr>
     </table>
     <br/>
@@ -92,7 +92,7 @@
       </tr>
       <tr>
         <td>Team Roster</td>
-        <td>Capitan</td>
+        <td>Captain</td>
       </tr>
     </table>
 </section>

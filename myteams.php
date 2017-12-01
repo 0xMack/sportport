@@ -23,20 +23,19 @@
     <!-- Custom styles for this template -->
     <link href="css/freelancer.css" rel="stylesheet">
 
-    <style>
-
-      table#main{
-        border: 5px solid black
-      }
-      th {
-        text-align: left;
-      }
-    </style>
-
 
   </head>
+  <style>
 
+      table#main{
+          border: 5px solid black
+      }
+      th {
+          text-align: left;
+      }
+  </style>
   <body id="page-top">
+
 
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav">
@@ -163,34 +162,4 @@
     </table>
 </section>
 
-    <footer class="copyright py-4 text-center text-white" id="footer">
-      <div class="container">
-        <small>Copyright &copy; SportPort</small>
-      </div>
-    </footer>
-
-
-    <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
-    <div class="scroll-to-top d-lg-none position-fixed ">
-      <a class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top">
-        <i class="fa fa-chevron-up"></i>
-      </a>
-    </div>
-
-    <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Plugin JavaScript -->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
-    <!-- Contact Form JavaScript -->
-    <script src="js/jqBootstrapValidation.js"></script>
-    <script src="js/contact_me.js"></script>
-
-    <!-- Custom scripts for this template -->
-    <script src="js/freelancer.min.js"></script>
-
-  </body>
-
-</html>
+<?php include('includes/footer.php'); ?>

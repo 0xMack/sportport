@@ -1,88 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php include('includes/header.php'); ?>
 
-  <head>
+    <section style="margin-top:50px;
+                margin-right: 140px;
+                margin-left: 140px;
+                background-color:seagreen;">
+        <div style="">
+            <img src ="img/profilePic.png" alt="profilePic" width="175" height="175" style="float: left; margin-right: 20px; position: relative; left:10px; border: 1px solid black; border-radius: 50%">
+            <h1 style="color:white; ">Jacob Mcdonalds</h1>
+            <img src="img/Male.png" alt="male" width="30" height="30">
+            <div style="color: whitesmoke">
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>Sport Port</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom fonts for this template -->
-    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+                <p style="float: left; margin-right: 20px;">Age: 23</p>
+                <p style="float: left; margin-right: 20px;">Height: 5.6</p>
+                <p>Game played: 123</p>
+                <p style="float: left; margin-right: 5px;">Favourite Sport: </p>
+                <img src="img/sports/soccer.png" width="30" height="30">
 
 
-
-    <!-- Custom styles for this template -->
-    <link href="css/freelancer.css" rel="stylesheet">
-
-  </head>
-
-  <body id="page-top">
-
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav">
-      <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="index.php">Sport Port</a>
-        <button class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          Menu
-          <i class="fa fa-bars"></i>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item mx-0 mx-lg-1">
-              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="index.php#sports">Offered Sports</a>
-            </li>
-            <li class="nav-item mx-0 mx-lg-1">
-              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="/loginregister.php">Login / Sign Up</a>
-            </li>
-          </ul>
+                <hr class="star-light">
+            </div>
+            <div>
+                <img src="img/Team.png" width="100" height="100" >
+                <a href="myteams.php" target="_blank" style=" font: italic bold 12px/30px Georgia, serif;float:inherit; font-size: 20px;link {color: cornflowerblue;
+    background-color: transparent;
+    text-decoration: none;}   "> &#9830; My Team</a>
+                <img src="img/cup.png" width="100" height="100" style="margin-left: 400px;">
+                <a href="leagues.php" target="_blank" style=" font: italic bold 12px/30px Georgia, serif;float:inherit; font-size: 20px;link {color: cornflowerblue;
+    background-color: transparent;
+    text-decoration: none;}   "> &#9830; Leagues</a>
+            </div>
         </div>
-      </div>
-    </nav>
 
-<section style=>
-<h1>Profile</h1>
-    <p>User profile: Link to myTeams will show here: </p>
-    <a href="myTeams.php"> myTeams </a>
-</section>
+    </section>
 
-    <footer class="copyright py-4 text-center text-white" id="footer">
-      <div class="container">
-        <small>Copyright &copy; SportPort</small>
-      </div>
-    </footer>
-
-
-    <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
-    <div class="scroll-to-top d-lg-none position-fixed ">
-      <a class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top">
-        <i class="fa fa-chevron-up"></i>
-      </a>
-    </div>
-
-    <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Plugin JavaScript -->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-    <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
-
-    <!-- Contact Form JavaScript -->
-    <script src="js/jqBootstrapValidation.js"></script>
-    <script src="js/contact_me.js"></script>
-
-    <!-- Custom scripts for this template -->
-    <script src="js/freelancer.min.js"></script>
-
-  </body>
-
-</html>
+<?php include('includes/footer.php'); ?>

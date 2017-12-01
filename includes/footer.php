@@ -47,7 +47,7 @@
     </footer>
     <?php }  ?>
 
-    <div class="copyright py-4 text-center text-white">
+    <div class="copyright py-4 text-center text-white" id="footer">
       <div class="container">
         <small>Copyright &copy; Your Website 2017</small>
       </div>
@@ -72,7 +72,7 @@
     <script src="js/contact_me.js"></script>
 
     <!-- Custom scripts for this template -->
-    <script src="js/freelancer.min.js"></script>
+    <script src="js/freelancer.js"></script>
 
   </body>
 

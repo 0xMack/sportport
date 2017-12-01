@@ -25,7 +25,7 @@
 
     <style>
 
-      table {
+      table#main{
         border: 5px solid black
       }
       th {
@@ -64,7 +64,7 @@
 
 <section style=>
     <h1>My Teams</h1>
-    <table style="width:100%">
+    <table style="width:100%" id="main">
       <tr>
         <th rowspan="3"><img src="img/sports/soccer.png" alt="soccer" height=100 width=100></th>
         <th>Soccer</th>
@@ -75,12 +75,45 @@
         <td>Next Game: TBA</td>
       </tr>
       <tr>
-        <td>Team Roster</td>
-        <td>Captain</td>
+        <td>
+          <table>
+            <tr>
+              <th>Team Roster</th>
+            </tr>
+            <tr>
+              <td>Bob</td>
+            </tr>
+            <tr>
+              <td>Suzie</td>
+            </tr>
+            <tr>
+              <td>Sarah</td>
+            </tr>
+            <tr>
+              <td>Jim</td>
+            </tr>
+            <tr>
+              <td>Tom</td>
+            </tr>
+            <tr>
+              <td>Dennis</td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table>
+            <tr>
+              <th>Captain</th>
+            </tr>
+            <tr>
+              <td>Bob</td>
+            </tr>
+          </table>
+        </td>
       </tr>
     </table>
     <br/>
-    <table style="width:100%">
+    <table style="width:100%" id="main">
       <tr>
         <th rowspan="3"><img src="img/sports/basketball.png" alt="basketball" height=100 width=100></th>
         <th>Basketball</th>
@@ -91,8 +124,41 @@
         <td>Next Game: TBA</td>
       </tr>
       <tr>
-        <td>Team Roster</td>
-        <td>Captain</td>
+        <td>
+          <table>
+            <tr>
+              <th>Team Roster</th>
+            </tr>
+            <tr>
+              <td>Bob</td>
+            </tr>
+            <tr>
+              <td>Suzie</td>
+            </tr>
+            <tr>
+              <td>Sarah</td>
+            </tr>
+            <tr>
+              <td>Jim</td>
+            </tr>
+            <tr>
+              <td>Tom</td>
+            </tr>
+            <tr>
+              <td>Dennis</td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table>
+            <tr>
+              <th>Captain</th>
+            </tr>
+            <tr>
+              <td>Bob</td>
+            </tr>
+          </table>
+        </td>
       </tr>
     </table>
 </section>

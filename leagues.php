@@ -44,17 +44,33 @@
               <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about"></a>
             </li> -->
             <li class="nav-item mx-0 mx-lg-1">
-              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="/loginregister.php">Login / Sign Up</a>
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="loginregister.php">Login / Sign Up</a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
 
-<section style=>
-<h1>Leagues: This is a page that displays all the Leagues</h1>
-    <p> djhew mew jhe mnes fhewfemnbw dnbmedewm henwfeh fne fehw few fhew few fhjer fm fsjgh fshj cfshke dewd sjc sdgnc sdm vdsjc </p>
-</section>
+  <section>
+    <div class="Header" id="listHeader">
+      <h2>Leagues</h2>
+    </div>
+      <?php
+        $sport = $_GET['sport'];
+
+            echo " <div class=\"info\" id=\"teamInfo\">
+                    <div class='sportPicture col-md-6 col-lg-4'>
+                        <a class='d-block mx-auto' href='leagues.php?sport=$sport'>
+                            <img class='img-fluid' src='img/sports/$sport.png' alt='$sport'>
+                            <div class='sport-caption d-flex position-absolute h-100 w-100'>
+                                <h3>$sport</h3>
+                            </div>
+                        </a>
+                    </div>
+                   <h3>League Name</h3>
+                   </div>";
+      ?>
+  </section>
 
     <footer class="copyright py-4 text-center text-white"  id= "footer">
       <div class="container">
@@ -76,7 +92,6 @@
 
     <!-- Plugin JavaScript -->
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-    <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
 
     <!-- Contact Form JavaScript -->
     <script src="js/jqBootstrapValidation.js"></script>

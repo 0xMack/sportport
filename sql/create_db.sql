@@ -62,8 +62,6 @@ CREATE TABLE team_membership
     CONSTRAINT team_membership_teams_TeamID_fk FOREIGN KEY (TeamID) REFERENCES teams (TeamID),
     CONSTRAINT team_membership_users_UserID_fk FOREIGN KEY (UserID) REFERENCES users (UserID)
 );
-CREATE UNIQUE INDEX team_membership_TeamID_uindex ON team_membership (TeamID);
-CREATE UNIQUE INDEX team_membership_UserID_uindex ON team_membership (UserID);
 
 
 # Create games table
@@ -79,5 +77,3 @@ CREATE TABLE games
     CONSTRAINT games_teams_BTeamID_fk FOREIGN KEY (BteamID) REFERENCES teams (TeamID)
 );
 CREATE UNIQUE INDEX games_GameID_uindex ON games (GameID);
-CREATE UNIQUE INDEX games_AteamID_uindex ON games (AteamID);
-CREATE UNIQUE INDEX games_BteamID_uindex ON games (BteamID);

@@ -30,6 +30,20 @@ function get_user_by_email($conn, $email){
     }
 }
 
+function get_leagues($conn, $sportID, $userID){
+    if($userID == Null){
+        //Get all leagues for a sport
+        $stmt = $conn->prepare("SELECT * from leagues JOIN team_membership WHERE SportID=?");
+        $stmt->execute([$sportID]);
+    }
+    else{
+        //Get all leagues for a sport, that a specific
+        $stmt = $conn->prepare("SELECT * from leagues WHERE SportID=? AND UserID=?");
+        $stmt->execute([$sportID, $userID]);
+    }
+    $leagues = $stmt->fetchAll();
+    return $leagues;
+}
 function get_league_by_id($conn, $leagueID){
 
 }
@@ -55,7 +69,6 @@ function user_exists($conn, $email){
 }
 
 function create_user($conn, $user){
-
     $stmt = $conn->prepare("INSERT INTO users (Email, LastName, FirstName, PasswordHash, Salt, DateOfBirth) VALUES (?, ?, ?, ?, ?, ?)");
     $stmt->bindParam(1, $user->email);
     $stmt->bindParam(2, $user->lastName);
@@ -63,5 +76,42 @@ function create_user($conn, $user){
     $stmt->bindParam(4, $user->password);
     $stmt->bindParam(5, $user->salt);
     $stmt->bindParam(6, $user->dob);
+    return $stmt->execute();
+}
+
+function create_game($conn, $game){
+    $stmt = $conn->prepare("INSERT INTO games (AteamID, BteamID, AteamScore, AteamScore, Date) VALUES (?, ?, ?, ?, ?)");
+    $stmt->bindParam(1, $game->aTeamID);
+    $stmt->bindParam(2, $game->bTeamID);
+    $stmt->bindParam(3, $game->aTeamScore);
+    $stmt->bindParam(4, $game->bTeamScore);
+    $stmt->bindParam(5, $game->date);
+    return $stmt->execute();
+}
+
+function create_league($conn, $leagueName, $sportID){
+    $stmt = $conn->prepare("INSERT INTO leagues (LeagueName, SportID) VALUES (?, ?)");
+    $stmt->bindParam(1, $leagueName);
+    $stmt->bindParam(2, $sportID);
+    return $stmt->execute();
+}
+
+function create_sport($conn, $sportName){
+    $stmt = $conn->prepare("INSERT INTO sports (SportName) VALUES (?)");
+    $stmt->bindParam(1, $sportName);
+    return $stmt->execute();
+}
+
+function create_team($conn, $teamName, $leagueID){
+    $stmt = $conn->prepare("INSERT INTO teams (TeamName, LeagueID) VALUES (?, ?)");
+    $stmt->bindParam(1, $teamName);
+    $stmt->bindParam(2, $leagueID);
+    return $stmt->execute();
+}
+
+function create_team_membership($conn, $teamID, $userID){
+    $stmt = $conn->prepare("INSERT INTO team_membership (TeamID, UserID) VALUES (?, ?)");
+    $stmt->bindParam(1, $teamID);
+    $stmt->bindParam(2, $userID);
     return $stmt->execute();
 }

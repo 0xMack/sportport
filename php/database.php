@@ -34,7 +34,7 @@ function get_user_by_email($conn, $email){
 function get_leagues($conn, $sportName, $userID){
     if($userID == Null){
         //Get all leagues for a sport
-        $stmt = $conn->prepare("SELECT * from leagues JOIN team_membership WHERE SportName=?");
+        $stmt = $conn->prepare("SELECT * from leagues JOIN team_membership JOIN sports WHERE SportName=?");
         $stmt->execute([$sportName]);
     }
     else{

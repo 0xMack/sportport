@@ -44,6 +44,22 @@ function get_leagues($conn, $sportID, $userID){
     $leagues = $stmt->fetchAll();
     return $leagues;
 }
+
+function get_teams($conn, $leagueID, $userID){
+    if($userID == Null){
+        //Get all teams for a league
+        $stmt = $conn->prepare("SELECT * from teams WHERE LeagueID=?");
+        $stmt->execute([$leagueID]);
+    }
+    else{
+        //Get all teams for a user
+        $stmt = $conn->prepare("SELECT * from teams JOIN leagues JOIN sports WHERE UserID=?");
+        $stmt->execute([$userID]);
+    }
+    $teams = $stmt->fetchAll();
+    return $teams;
+}
+
 function get_league_by_id($conn, $leagueID){
 
 }

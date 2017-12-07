@@ -55,19 +55,25 @@
 <h1>Teams</h1>
 <?php
 
-$host    = "localhost";
-$user    = "root";
-$pass    = "root";
-$db_name = "sportportdb";
+// $host    = "localhost";
+// $user    = "root";
+// $pass    = "root";
+// $db_name = "sportportdb";
 
 //create connection
 //$conn = mysqli_connect($host, $user, $pass, $db_name);/**/
 
 $conn=connect_db();
 
-$result = mysqli_query($conn,"SELECT TeamName FROM teams WHERE LeagueID='1'");
+$leagueID = $_GET['leagueid'];
+// $result = mysqli_query($conn,"SELECT TeamName FROM teams WHERE LeagueID=$leagueID");
+$leagues = get_teams_byleague($conn, $leagueID);
 
-$all_property = array();
+foreach($teams as $team){
+  echo ""
+  $team["TeamName"]
+}
+// $all_property = array();
 
 //echo $result;
 

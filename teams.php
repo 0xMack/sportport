@@ -61,9 +61,9 @@ $pass    = "root";
 $db_name = "sportportdb";
 
 //create connection
-$conn = mysqli_connect($host, $user, $pass, $db_name);
+//$conn = mysqli_connect($host, $user, $pass, $db_name);/**/
 
-//$conn=connect_db();
+$conn=connect_db();
 
 $result = mysqli_query($conn,"SELECT TeamName FROM teams WHERE LeagueID='1'");
 

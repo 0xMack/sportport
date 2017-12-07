@@ -1,8 +1,5 @@
 <?php
 
-require_once('database.php');
-require_once('dto/user.php');
-
 function hash_password($password, $salt){
     return password_hash($password, PASSWORD_BCRYPT, ['salt' => $salt]);
 }
@@ -12,7 +9,8 @@ function valid_creds($user, $password_attempt){
     $valid = ($password_attempt == $user->password);
     return $valid;
 }
-
+require_once('database.php');
+require_once('dto/user.php');
 $conn = connect_db();
 session_start();
 $message = "Message is unchanged!";

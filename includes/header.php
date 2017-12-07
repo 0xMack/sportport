@@ -1,4 +1,6 @@
 <?php
+    require_once('php/database.php');
+    require_once('php/dto/user.php');
     session_start();
     if(isset($_SESSION['loggedin'])){
         $loggedin = true;

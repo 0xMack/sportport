@@ -21,7 +21,7 @@
                     echo "<tr>
                               <td><div class='sportPicture col-md-1 col-lg-1'><img class='img-fluid' src='img/sports/$sport.png' alt='$sport'></div></td>
                               <td>Some Name</td>
-                              <td><a href='team.php?teamid=1' type='button' class='btn btn-info'>League Info</a></td>
+                              <td><a href='teams.php?teamid=1' type='button' class='btn btn-info'>League Info</a></td>
                               <td><a href='team.php?teamid=1' type='button' class='btn btn-info'>Create Team</a></td>
                           </tr>"
                 ?>

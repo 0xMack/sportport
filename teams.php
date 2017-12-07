@@ -53,7 +53,69 @@
 
 <section style=>
 <h1>Teams</h1>
-    <p>Will populate with data base of all teams within a league</p>
+<?php
+
+$host    = "localhost";
+$user    = "root";
+$pass    = "root";
+$db_name = "sportportdb";
+
+//create connection
+$conn = mysqli_connect($host, $user, $pass, $db_name);
+
+//$conn=connect_db();
+
+$result = mysqli_query($conn,"SELECT TeamName FROM teams WHERE LeagueID='1'");
+
+$all_property = array();
+
+//echo $result;
+
+$display_table_header = <<<_END
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Team Name</th>
+        <th></th>
+
+
+      </tr>
+    </thead>
+    <tbody>
+_END;
+
+
+
+$display_table_footer = <<<_END
+    </tbody>
+  </table>
+_END;
+
+
+
+while ($property = mysqli_fetch_field($result)) {
+array_push($all_property, $property->name);  //save those to array
+}
+
+echo $display_table_header;
+
+while ($row = mysqli_fetch_array($result)) {
+$LeagueID=$row['LeagueID'];
+  echo "<tr>";
+  foreach ($all_property as $item) {
+      echo '<td>' . $row[$item] . '</td>'; //get items using property value
+  }
+  echo '</tr>';
+}
+
+
+echo $display_table_footer;
+
+
+
+
+
+?>
 </section>
 
     <footer class="copyright py-4 text-center text-white" id="footer">

@@ -16,7 +16,6 @@
                 </thead>
                 <tbody>
                 <?php
-                    $conn = connect_db();
                     $sport_name = $_GET['sport'];
                     $leagues = get_leagues($conn, $sport_name, null);
                     foreach($leagues as $league) {

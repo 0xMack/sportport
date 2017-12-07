@@ -2,7 +2,18 @@
 <div id="page">
     <section>
         <h1>My Teams</h1>
-        <?php $teams=get_teams(null, $_SESSION['userID']); print_r($teams);?>
+        <?php $teams=get_teams(null, $_SESSION['userID']);
+        foreach($teams as $team) {
+            echo "
+                <table id=\"main\">
+                    <tr>
+                        <th rowspan=\"3\"><img src=\"img/sports/\"".$team["SportName"]." </th>
+                        <th>".$team["SportName"]."</th>
+                        <th>".$team["LeagueName"]."</th>
+                    </tr>
+                </table>";
+        }
+        ?>
         <table id="main">
           <tr>
             <th rowspan="3"><img src="img/sports/soccer.png" alt="soccer" height=100 width=100></th>

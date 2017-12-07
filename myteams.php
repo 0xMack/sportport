@@ -2,7 +2,9 @@
 <div id="page">
     <section>
         <h1>My Teams</h1>
-        <?php $teams=get_teams(null, $_SESSION['userID']);
+        <?php
+        $conn = connect_db();
+        $teams = get_team($conn, null, $_SESSION['userID']);
         foreach($teams as $team) {
             echo "
                 <table id=\"main\">

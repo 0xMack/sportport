@@ -30,37 +30,40 @@ function get_user_by_email($conn, $email){
     }
 }
 
-function get_leagues($conn, $sportID, $userID){
+
+function get_leagues_byID($conn, $sportName, $userID){
     if($userID == Null){
         //Get all leagues for a sport
-        $stmt = $conn->prepare("SELECT * from leagues JOIN team_membership WHERE SportID=?");
-        $stmt->execute([$sportID]);
+        $stmt = $conn->prepare("SELECT * from leagues JOIN team_membership WHERE SportName=?");
+        $stmt->execute([$sportName]);
     }
     else{
         //Get all leagues for a sport, that a specific
         $stmt = $conn->prepare("SELECT * from leagues WHERE SportID=? AND UserID=?");
-        $stmt->execute([$sportID, $userID]);
+        $stmt->execute([$sportName, $userID]);
     }
     $leagues = $stmt->fetchAll();
     return $leagues;
 }
-function get_league_by_id($conn, $leagueID){
 
+function get_teams($conn, $leagueID, $userID){
+    if($userID == Null){
+        //Get all teams for a league
+        $stmt = $conn->prepare("SELECT * from teams WHERE LeagueID=?");
+        $stmt->execute([$leagueID]);
+    }
+    else{
+        //Get all teams for a user
+        $stmt = $conn->prepare("SELECT * from teams JOIN leagues JOIN sports WHERE UserID=?");
+        $stmt->execute([$userID]);
+    }
+    $teams = $stmt->fetchAll();
+    return $teams;
 }
 
-function get_team_by_id($conn, $teamID){
-
+function get_league_by_id($conn, $leagueID)
+{
 }
-
-function get_sport_by_id($conn, $sportID){
-
-}
-
-//function get_user_by_id($conn, $userID){
-//    $stmt = $conn->prepare("SELECT * from users WHERE UserID=?");
-//    $stmt->execute([$userID]);
-//    return $stmt->fetchAll();
-//}
 
 function user_exists($conn, $email){
     $user = get_user_by_email($conn, $email);
@@ -115,3 +118,4 @@ function create_team_membership($conn, $teamID, $userID){
     $stmt->bindParam(2, $userID);
     return $stmt->execute();
 }
+

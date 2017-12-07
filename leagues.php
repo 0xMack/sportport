@@ -16,10 +16,10 @@
                 </thead>
                 <tbody>
                 <?php
-                    $sport = $_GET['sport'];
-
+                    $sport_name = $_GET['sport'];
+                    $sports = get_leagues($sport_name);
                     echo "<tr>
-                              <td><div class='sportPicture col-md-1 col-lg-1'><img class='img-fluid' src='img/sports/$sport.png' alt='$sport'></div></td>
+                              <td><div class='sportPicture col-md-1 col-lg-1'><img class='img-fluid' src='img/sports/$sport_name.png' alt='$sport_name'></div></td>
                               <td>Some Name</td>
                               <td><a href='teams.php?teamid=1' type='button' class='btn btn-info'>League Info</a></td>
                               <td><a href='team.php?teamid=1' type='button' class='btn btn-info'>Create Team</a></td>

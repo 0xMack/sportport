@@ -17,6 +17,7 @@
         <div class="row">
             <?php
                 $sports = ['soccer', 'basketball', 'baseball', 'volleyball', 'hockey', 'lacrosse'];
+
                 foreach($sports as $sport) {
                     echo "  <div class='col-md-6 col-lg-4'>
                                 <a class='d-block mx-auto' href='leagues.php?sport=$sport'>

@@ -16,15 +16,16 @@
                 </thead>
                 <tbody>
                 <?php
+                    $conn = connect_db();
                     $sport_name = $_GET['sport'];
                     $leagues = get_leagues($conn, $sport_name, null);
                     foreach($leagues as $league) {
-                        $league_name = $leagues[""];
+                        $league_name = $league["LeagueName"];
+                        $league_id = $league["LeagueID"];
                         echo "<tr>
                               <td><div class='sportPicture col-md-1 col-lg-1'><img class='img-fluid' src='img/sports/$sport_name.png' alt='$sport_name'></div></td>
-                              <td>$sport</td>
-                              <td><a href='team.php?teamid=1' type='button' class='btn btn-info'>League Info</a></td>
-                              <td><a href='team.php?teamid=1' type='button' class='btn btn-info'>Create Team</a></td>
+                              <td>$league_name</td>
+                              <td><a href='teams.php?leagueID=1' type='button' class='btn btn-info'>League Info</a></td>
                           </tr>";
                     }
                 ?>

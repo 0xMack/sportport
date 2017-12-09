@@ -12,7 +12,7 @@
                     <th>Last Name</th>
                     <th>
                       <form method="post">
-                        <input name='joinTeam' type='button' class='btn btn-info'>Join Team</a>
+                        <a name='joinTeam' type='button' class='btn btn-info'>Join Team</a>
                     </th>
                 </tr>
             </thead>

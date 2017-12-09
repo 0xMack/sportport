@@ -4,7 +4,7 @@
         <h1>My Teams</h1>
         <?php
         $conn = connect_db();
-        $teams = get_team($conn, null, $_SESSION['userID']);
+        $teams = get_teams($conn, null, $_SESSION['userID']);
         foreach($teams as $team) {
             echo "
                 <table id=\"main\">

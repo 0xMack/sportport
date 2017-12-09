@@ -68,7 +68,8 @@ function get_teams($conn, $leagueID, $userID){
     }
     else{
         //Get all teams for a user
-        $stmt = $conn->prepare("SELECT * from team_membership JOIN teams JOIN leagues JOIN sports WHERE UserID=?");
+        //$stmt = $conn->prepare("SELECT * from team_membership WHERE UserID=?");
+        $stmt = $conn->prepare("SELECT * from team_membership INNER JOIN teams ON team_membership.TeamID=teams.TeamID INNER JOIN leagues ON teams.LeagueID=leagues.LeagueID INNER JOIN sports ON leagues.SportID=sports.SportID WHERE UserID=?");
         $stmt->execute([$userID]);
     }
     $teams = $stmt->fetchAll();

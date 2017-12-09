@@ -17,8 +17,8 @@ CREATE TABLE users
     PasswordHash BINARY(64) NOT NULL,
     Salt BINARY(64) NOT NULL
 );
-CREATE UNIQUE INDEX Users_UserID_uindex ON Users (UserID);
-CREATE UNIQUE INDEX Users_Email_uindex ON Users (Email);
+CREATE UNIQUE INDEX users_UserID_uindex ON users (UserID);
+CREATE UNIQUE INDEX users_Email_uindex ON users (Email);
 
 
 # Create sports table

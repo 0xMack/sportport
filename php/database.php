@@ -19,13 +19,19 @@ function connect_db(){
 
 function join_Team($conn, $userID, $teamID)  {
 
-  if(isset($_POST['joinTeam']))
+  /*if(isset($_POST['joinTeam']))
   {
     $stmt = $conn->prepare("INSERT INTO team_membership (Team ID, UserID) VALUES (?, ?)");
     $stmt->bindParam(1, $teamID);
-    $stmt->bindParam(2, $userID);  
+    $stmt->bindParam(2, $userID);
     return $stmt->execute();
-  }
+  }*/
+    if(isset($_POST['joinTeam']))
+    {
+        $SQL = "INSERT INTO team_membership (TeamID, UserID) VALUES (?, ?)";
+
+        $result = mysql_query($SQL);
+    }
 
 }
 
@@ -82,7 +88,7 @@ function get_teams($conn, $leagueID, $userID){
     else{
         //Get all teams for a user
         //$stmt = $conn->prepare("SELECT * from team_membership WHERE UserID=?");
-        $stmt = $conn->prepare("SELECT * from team_membership INNER JOIN teams ON team_membership.TeamID=teams.TeamID INNER JOIN leagues ON teams.LeagueID=leagues.LeagueID INNER JOIN sports ON leagues.SportID=sports.SportID WHERE UserID=?");
+        $stmt = $conn->prepare("SELECT DISTINCT * from team_membership INNER JOIN teams ON team_membership.TeamID=teams.TeamID INNER JOIN leagues ON teams.LeagueID=leagues.LeagueID INNER JOIN sports ON leagues.SportID=sports.SportID WHERE UserID=?");
         $stmt->execute([$userID]);
     }
     $teams = $stmt->fetchAll();

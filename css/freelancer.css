@@ -379,4 +379,7 @@ table#main{
 .sport-image {
   width: 100px;
   height: 100px;
+  margin: 15px;
+  padding: 15px;
+
 }

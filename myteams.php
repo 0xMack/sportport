@@ -29,7 +29,7 @@
                 $playerName = $player["FirstName"];
                 echo "
                                 <tr>
-                                  <td>$player</td>
+                                  <td>$playerName</td>
                                 </tr>
                     ";
             }

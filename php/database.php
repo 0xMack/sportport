@@ -19,13 +19,19 @@ function connect_db(){
 
 function join_Team($conn, $userID, $teamID)  {
 
-  if(isset($_POST['joinTeam']))
+  /*if(isset($_POST['joinTeam']))
   {
     $stmt = $conn->prepare("INSERT INTO team_membership (Team ID, UserID) VALUES (?, ?)");
     $stmt->bindParam(1, $teamID);
-    $stmt->bindParam(2, $userID);  
+    $stmt->bindParam(2, $userID);
     return $stmt->execute();
-  }
+  }*/
+    if(isset($_POST['joinTeam']))
+    {
+        $SQL = "INSERT INTO team_membership (TeamID, UserID) VALUES (?, ?)";
+
+        $result = mysql_query($SQL);
+    }
 
 }
 
@@ -51,9 +57,9 @@ function get_user_by_email($conn, $email){
 
 
 function get_leagues($conn, $sportName, $userID){
-    if($userID == Null){
+    if($userID == null){
         //Get all leagues for a sport
-        $stmt = $conn->prepare("SELECT * from leagues JOIN team_membership JOIN sports WHERE SportName=?");
+        $stmt = $conn->prepare("SELECT * FROM leagues JOIN sports ON leagues.SportID=sports.SportID WHERE SportName=?");
         $stmt->execute([$sportName]);
     }
     else{
@@ -81,15 +87,14 @@ function get_teams($conn, $leagueID, $userID){
     else{
         //Get all teams for a user
         //$stmt = $conn->prepare("SELECT * from team_membership WHERE UserID=?");
-        $stmt = $conn->prepare("SELECT * from team_membership INNER JOIN teams ON team_membership.TeamID=teams.TeamID INNER JOIN leagues ON teams.LeagueID=leagues.LeagueID INNER JOIN sports ON leagues.SportID=sports.SportID WHERE UserID=?");
+        $stmt = $conn->prepare("SELECT DISTINCT * from team_membership INNER JOIN teams ON team_membership.TeamID=teams.TeamID INNER JOIN leagues ON teams.LeagueID=leagues.LeagueID INNER JOIN sports ON leagues.SportID=sports.SportID WHERE UserID=?");
         $stmt->execute([$userID]);
     }
     $teams = $stmt->fetchAll();
     return $teams;
 }
 
-function get_league_by_id($conn, $leagueID)
-{
+function get_league_by_id($conn, $leagueID){
 }
 
 function user_exists($conn, $email){
@@ -110,7 +115,7 @@ function create_user($conn, $user){
 }
 
 function create_game($conn, $game){
-    $stmt = $conn->prepare("INSERT INTO games (AteamID, BteamID, AteamScore, AteamScore, Date) VALUES (?, ?, ?, ?, ?)");
+    $stmt = $conn->prepare("INSERT INTO games (AteamID, BteamID, AteamScore, BteamScore, Date) VALUES (?, ?, ?, ?, ?)");
     $stmt->bindParam(1, $game->aTeamID);
     $stmt->bindParam(2, $game->bTeamID);
     $stmt->bindParam(3, $game->aTeamScore);

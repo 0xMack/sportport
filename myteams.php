@@ -10,11 +10,12 @@
             $sportName = $team["SportName"];
             $leagueName = $team["LeagueName"];
             $leagueID = $team["LeagueID"];
-            $roster = get_user_by_id($conn, $leagueID);
+            $teamID = $team["TeamID"];
+            $roster = get_user_by_id($conn, $teamID);
             echo "
                 <table id=\"main\">
                     <tr>
-                        <th rowspan=\"3\"><img src=\"img/sports/$sportName\" </th>
+                        <th rowspan=\"3\"><img src=\"img/sports/$sportName.png\" </th>
                         <th>Sport: $sportName</th>
                         <th>League: $leagueName</th>
                     </tr>

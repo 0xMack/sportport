@@ -53,75 +53,32 @@
 
 <section style=>
 <h1>Teams</h1>
-<?php
 
-// $host    = "localhost";
-// $user    = "root";
-// $pass    = "root";
-// $db_name = "sportportdb";
-
-//create connection
-//$conn = mysqli_connect($host, $user, $pass, $db_name);/**/
-
-$conn=connect_db();
-
-$leagueID = $_GET['leagueid'];
-// $result = mysqli_query($conn,"SELECT TeamName FROM teams WHERE LeagueID=$leagueID");
-$leagues = get_teams_byleague($conn, $leagueID);
-
-foreach($teams as $team){
-  echo ""
-  $team["TeamName"]
-}
-// $all_property = array();
-
-//echo $result;
-
-$display_table_header = <<<_END
-  <table class="table table-hover">
+<div class="info">
+  <table class="table">
     <thead>
       <tr>
         <th>Team Name</th>
-        <th></th>
-
-
       </tr>
     </thead>
     <tbody>
-_END;
-
-
-
-$display_table_footer = <<<_END
-    </tbody>
-  </table>
-_END;
-
-
-
-while ($property = mysqli_fetch_field($result)) {
-array_push($all_property, $property->name);  //save those to array
-}
-
-echo $display_table_header;
-
-while ($row = mysqli_fetch_array($result)) {
-$LeagueID=$row['LeagueID'];
-  echo "<tr>";
-  foreach ($all_property as $item) {
-      echo '<td>' . $row[$item] . '</td>'; //get items using property value
-  }
-  echo '</tr>';
-}
-
-
-echo $display_table_footer;
-
-
-
-
-
-?>
+    <?php
+        $conn=connect_db();
+        $sport_name = $_GET['sport'];
+        $leagueID = $_GET['leagueid'];
+// $result = mysqli_query($conn,"SELECT TeamName FROM teams WHERE LeagueID=$leagueID");
+        $teams = get_teams_byleague($conn, $leagueID);
+        foreach($teams as $team){
+            $team_id = $teams["TeamID"];
+            echo "<tr>
+                  <td><div class='sportPicture col-md-1 col-lg-1'><img class='img-fluid' src='img/sports/$sport_name.png' alt='$sport_name'></div></td>
+                  <td>$team_name</td>
+            </tr>";
+          }
+    ?>
+      </tbody>
+    </table>
+  </div>
 </section>
 
     <footer class="copyright py-4 text-center text-white" id="footer">

@@ -48,7 +48,7 @@ function get_leagues($conn, $sportName, $userID){
 function get_teams_byleague($conn, $leagueID){
 
   //Get all teams for a league
-  $stmt = $conn->prepare("SELECT TeamName FROM teams WHERE LeagueID=?");
+  $stmt = $conn->prepare("SELECT * FROM teams WHERE LeagueID=?");
   $stmt->execute([$leagueID]);
   $teams = $stmt->fetchAll();
   return $teams;

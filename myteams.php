@@ -9,14 +9,36 @@
         foreach($teams as $team) {
             $sportName = $team["SportName"];
             $leagueName = $team["LeagueName"];
+            $leagueID = $team["LeagueID"];
+            $roster = get_user_by_id($conn, $leagueID);
             echo "
                 <table id=\"main\">
                     <tr>
                         <th rowspan=\"3\"><img src=\"img/sports/$sportName\" </th>
-                        <th>$sportName</th>
-                        <th>$leagueName</th>
+                        <th>Sport: $sportName</th>
+                        <th>League: $leagueName</th>
                     </tr>
-                </table>";
+                    <tr>
+                        <td>
+                            <table>
+                                <tr>
+                                  <th>Team Roster</th>
+                                </tr>
+                                ";
+            foreach($roster as $player) {
+                $playerName = $player["FirstName"];
+                echo "
+                                <tr>
+                                  <td>$player</td>
+                                </tr>
+                    ";
+            }
+            echo "
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+                ";
         }
         ?>
         <table id="main">

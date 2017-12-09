@@ -28,8 +28,8 @@
                     $firstName = $user["FirstName"];
                     $lastName = $user["LastName"];
                     echo "<tr>
-                            <td>$TeamID</td>
-                            <td>$UserID</td>
+                            <td>$firstName</td>
+                            <td>$lastName</td>
                           </tr>";
                 }
             ?>

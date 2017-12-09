@@ -17,6 +17,13 @@ function connect_db(){
     }
 }
 
+function get_user_by_id($conn, $teamID){
+    $stmt = $conn->prepare("SELECT * from users JOIN team_membership WHERE TeamID=?");
+    $stmt->execute([$teamID]);
+    $users = $stmt->fetchAll();
+    return $users;
+}
+
 function get_user_by_email($conn, $email){
     $stmt = $conn->prepare("SELECT * from users WHERE Email=?");
     $stmt->execute([$email]);

@@ -11,7 +11,6 @@
                         <th>Sport</th>
                         <th>League Name</th>
                         <th>League Info</th>
-                        <th>Create Team</th>
                     </tr>
                 </thead>
                 <tbody>

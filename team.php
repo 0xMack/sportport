@@ -11,7 +11,7 @@
                     <th>First Name</th>
                     <th>Last Name</th>
                     <th>
-                      <form method="post">
+                      <form method="post" action="">
                         <input name='joinTeam' type='button' class='btn btn-info' value="Join">
                       </form>
                     </th>
@@ -21,7 +21,8 @@
             <?php
                 $conn = connect_db();
                 $sport_name = $_GET['sport'];
-                $players = get_user_by_id($conn, $teamID);
+                $team_id = $_GET['teamid'];
+                $players = get_user_by_id($conn, $team_id);
                 foreach($players as $player) {
                     $firstName = $player["FirstName"];
                     $lastName = $player["LastName"];

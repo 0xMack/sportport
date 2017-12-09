@@ -21,12 +21,10 @@
             <?php
                 $conn = connect_db();
                 $sport_name = $_GET['sport'];
-                $team_id = $_GET['teamid'];
-                $league_id = $_GET['leagueid'];
-                $users = get_user_by_id($conn, $team_id);
-                foreach($users as $user) {
-                    $firstName = $user["FirstName"];
-                    $lastName = $user["LastName"];
+                $players = get_user_by_id($conn, $teamID);
+                foreach($players as $player) {
+                    $firstName = $player["FirstName"];
+                    $lastName = $player["LastName"];
                     echo "<tr>
                             <td>$firstName</td>
                             <td>$lastName</td>

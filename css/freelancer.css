@@ -313,7 +313,6 @@ a {
 #profile{
   margin-top: 20px;
   margin-left: 200px;
-
 }
 
 #pp{
@@ -364,4 +363,16 @@ table{
 }
 table#main{
   border: 5px solid black;
+}
+#anchor{
+
+  margin-top: 5px;
+  margin-bottom: 5px;
+  width: 65px;
+  height: 65px;
+  fill: #426278;
+  text-decoration: line-through;
+}
+#line{
+  width: 10px;
 }

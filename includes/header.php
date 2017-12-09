@@ -6,6 +6,7 @@
         $loggedin = true;
         $firstName = $_SESSION['firstName'];
         $lastName = $_SESSION['lastName'];
+        $dob = $_SESSION['dob'];
     }
     else{
         $loggedin = false;

@@ -303,18 +303,24 @@ a {
   border-left: 0px;
   border-right: 0px;
   text-align: center;
-
-
 }
 
 #Leagues{
   text-align:center;
   margin:0 auto;
+}
 
-
-
+#profile{
+  margin-top: 20px;
+  margin-left: 200px;
 
 }
+
+#pp{
+  float:left;
+  margin-right: 100px;
+}
+
 .sportPicture{
   height:20%;
   width: 20%;

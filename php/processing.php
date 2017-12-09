@@ -35,6 +35,7 @@ if($_POST['formSubmit'] == "Register"){
             $_SESSION['userID'] = $user->userID;
             $_SESSION['firstName'] = $user->firstName;
             $_SESSION['lastName'] = $user->lastName;
+            $_SESSION['dob'] = $user->dob;
             header("Location: ../profile.php");
         }
     }
@@ -49,6 +50,7 @@ else if($_POST['formSubmit'] == "Login"){
         $_SESSION['userID'] = $user->userID;
         $_SESSION['firstName'] = $user->firstName;
         $_SESSION['lastName'] = $user->lastName;
+        $_SESSION['dob'] = $user->dob;
         header("Location: ../profile.php");
     }
     else{

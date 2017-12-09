@@ -1,38 +1,18 @@
 <?php include('includes/header.php'); ?>
 
-<div id="page">
-    <section style="margin-top:50px;
-                /*margin-right: 140px;*/
-                /*margin-left: 140px;*/
-                background-color:#2EA6C4;">
-        <div>
-            <img src ="img/profilePic.png" alt="profilePic" width="175" height="175" style="float: left; margin-right: 20px; position: relative; left:10px; border: 1px solid black; border-radius: 50%">
+<section id="Leagues">
+    <div class="jumbotron" id="LeaguesHeader">
+      <h2>Profile</h2>
+    </div>
+</section>
+        <div id= "profile">
+            <img id="pp" class='img-fluid' src='img/person.png' alt='$profile logo'>
             <?php
-                echo "<h1 style='color:white;'>$firstName $lastName</h1>";
+                echo "<h3>Name: $firstName $lastName</h3>";
+                echo "<h3>Date of Birth: $dob</h3>";
+
             ?>
-            <img src="img/Male.png" alt="male" width="30" height="30">
-            <div style="color: whitesmoke">
-
-                <p style="float: left; margin-right: 20px;">Age: 23</p>
-                <p style="float: left; margin-right: 20px;">Height: 5.6</p>
-                <p>Game played: 123</p>
-                <p style="float: left; margin-right: 5px;">Favourite Sport: </p>
-                <img src="img/sports/soccer.png" width="30" height="30">
-
-
-                <hr class="star-light">
-            </div>
-            <div>
-                <img src="img/Team.png" width="100" height="100" >
-                <a href="myteams.php" style=" font: italic bold 12px/30px Georgia, serif;float:inherit; font-size: 20px;link {color: #000000 !important;
-    background-color: transparent;
-    text-decoration: none;}   ">My Team</a>
-                <img src="img/cup.png" width="100" height="100" style="margin-left: 400px;">
-                <a href="leagues.php?sport=soccer" style=" font: italic bold 12px/30px Georgia, serif;float:inherit; font-size: 20px;link {color: #000000 !important;
-    background-color: transparent;
-    text-decoration: none;}   ">Leagues</a>
-            </div>
+            <a href="myteams.php" type='button' class='btn btn-info'>My Teams</a>
         </div>
 <!--    </section>-->
-<div>
 <?php include('includes/footer.php'); ?>

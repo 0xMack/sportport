@@ -12,7 +12,8 @@
                     <th>Last Name</th>
                     <th>
                       <form method="post">
-                        <a name='joinTeam' type='button' class='btn btn-info'>Join Team</a>
+                        <input name='joinTeam' type='button' class='btn btn-info' value="Join">
+                      </form>
                     </th>
                 </tr>
             </thead>

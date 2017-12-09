@@ -17,6 +17,18 @@ function connect_db(){
     }
 }
 
+function join_Team($conn, $userID, $teamID)  {
+
+  if(isset($_POST['joinTeam']))
+  {
+    $stmt = $conn->prepare("INSERT INTO team_membership (Team ID, UserID) VALUES (?, ?)");
+    $stmt->bindParam(1, $teamID);
+    $stmt->bindParam(2, $userID);  
+    return $stmt->execute();
+  }
+
+}
+
 function get_user_by_id($conn, $teamID){
     $stmt = $conn->prepare("SELECT * from users JOIN team_membership WHERE TeamID=?");
     $stmt->execute([$teamID]);

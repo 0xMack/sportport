@@ -11,8 +11,8 @@
                     <th>First Name</th>
                     <th>Last Name</th>
                     <th>
-                      <form method="post" action="">
-                        <input name='joinTeam' type='button' class='btn btn-info' value="Join">
+                      <form method="post" action="php/jointeam.php">
+                        <input name='joinTeam' type='submit' class='btn btn-info' value="Join">
                         <?php
                           $team_id = $_GET['teamid'];
                           echo "<input name=\"team\" type=\"hidden\" value=\"$team_id\">";

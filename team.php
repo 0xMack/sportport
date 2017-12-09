@@ -13,6 +13,10 @@
                     <th>
                       <form method="post" action="">
                         <input name='joinTeam' type='button' class='btn btn-info' value="Join">
+                        <?php
+                          $team_id = $_GET['teamid'];
+                          echo "<input name=\"team\" type=\"hidden\" value=\"$team_id\">";
+                         ?>
                       </form>
                     </th>
                 </tr>

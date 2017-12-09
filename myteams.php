@@ -6,12 +6,14 @@
         $conn = connect_db();
         $teams = get_teams($conn, null, $_SESSION['userID']);
         foreach($teams as $team) {
+            $sportName = $team["SportName"];
+            $leagueName = $team["LeagueName"];
             echo "
                 <table id=\"main\">
                     <tr>
-                        <th rowspan=\"3\"><img src=\"img/sports/\"".$team["SportName"]." </th>
-                        <th>".$team["SportName"]."</th>
-                        <th>".$team["LeagueName"]."</th>
+                        <th rowspan=\"3\"><img src=\"img/sports/$sportName\" </th>
+                        <th>$sportName</th>
+                        <th>$leagueName</th>
                     </tr>
                 </table>";
         }

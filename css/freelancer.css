@@ -375,3 +375,8 @@ table#main{
 #line{
   width: 10px;
 }
+
+.sport-image {
+  width: 100px;
+  height: 100px;
+}

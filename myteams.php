@@ -15,7 +15,7 @@
             echo "
                 <table id=\"main\">
                     <tr>
-                        <th><img src=\"img/sports/$sportName.png\" alt=\"$sportName\" height=100 width=100></th>
+                        <th class=\"sport-image\" rowspan=\"3\"><img src=\"img/sports/$sportName.png\" alt=\"$sportName\" height=100 width=100></th>
                         <th>Sport: $sportName</th>
                         <th>League: $leagueName</th>
                         <th>Team: $teamName</th>

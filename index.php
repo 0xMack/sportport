@@ -6,7 +6,7 @@
         <h1 class="text-uppercase mb-0">Sport Port</h1>
         <!--<hr class="star-light">-->
         <strike> <img  src='img/anchor3.png' alt='Sport Port Logo - Anchor' id="anchor"> </strike>
-        <h2 class="font-weight-light mb-0">Join Leagues - Make Teams - Keep Track of Your Stats</h2>
+        <h2 class="font-weight-light mb-0">6 Sports - 1 Ball - 2 Legs - 1 SportPort</h2>
       </div>
     </header>
 

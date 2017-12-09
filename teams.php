@@ -14,17 +14,17 @@
     <tbody>
     <?php
         $conn=connect_db();
-        $sport_name = $_GET['sport'];
         $leagueID = $_GET['leagueid'];
+        $sport_name = $_GET['sportname'];
         $teams = get_teams_byleague($conn, $leagueID);
         foreach($teams as $team){
-            $team_id = $teams["TeamID"];
-            $team_name = $teams["TeamName"];
+            $team_id = $team["TeamID"];
+            $team_name = $team["TeamName"];
             echo "<tr>
-                  <td><div class='sportPicture col-md-1 col-lg-1'><img class='img-fluid' src='img/sports/$sport_name.png' alt='$sport_name'></div></td>
-                  <td>$team_name</td>
-            </tr>";
-          }
+                    <td><div class='sportPicture col-md-1 col-lg-1'><img class='img-fluid' src='img/sports/$sport_name.png' alt='$sport_name'></div></td>
+                    <td>$team_name</td>
+                  </tr>";
+        }
     ?>
       </tbody>
     </table>

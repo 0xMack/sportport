@@ -23,10 +23,10 @@
                         $league_name = $league["LeagueName"];
                         $league_id = $league["LeagueID"];
                         echo "<tr>
-                              <td><div class='sportPicture col-md-1 col-lg-1'><img class='img-fluid' src='img/sports/$sport_name.png' alt='$sport_name'></div></td>
-                              <td>$league_name</td>
-                              <td><a href='teams.php?leagueid=$league_id' type='button' class='btn btn-info'>League Info</a></td>
-                          </tr>";
+                                <td><div class='sportPicture col-md-1 col-lg-1'><img class='img-fluid' src='img/sports/$sport_name.png' alt='$sport_name'></div></td>
+                                <td>$league_name</td>
+                                <td><a href='teams.php?sportname=$sport_name&leagueid=$league_id' type='button' class='btn btn-info'>League Info</a></td>
+                              </tr>";
                     }
                 ?>
                 </tbody>

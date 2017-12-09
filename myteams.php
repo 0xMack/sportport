@@ -5,6 +5,7 @@
         <?php
         $conn = connect_db();
         $teams = get_teams($conn, null, $_SESSION['userID']);
+        echo print_r($teams);
         foreach($teams as $team) {
             $sportName = $team["SportName"];
             $leagueName = $team["LeagueName"];

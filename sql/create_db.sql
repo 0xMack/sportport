@@ -59,6 +59,7 @@ CREATE TABLE team_membership
 (
     TeamID INT NOT NULL,
     UserID INT NOT NULL,
+    IsCaptain BOOLEAN DEFAULT FALSE  NOT NULL,
     CONSTRAINT team_membership_teams_TeamID_fk FOREIGN KEY (TeamID) REFERENCES teams (TeamID),
     CONSTRAINT team_membership_users_UserID_fk FOREIGN KEY (UserID) REFERENCES users (UserID)
 );

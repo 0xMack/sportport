@@ -51,9 +51,9 @@ function get_user_by_email($conn, $email){
 
 
 function get_leagues($conn, $sportName, $userID){
-    if($userID == Null){
+    if($userID == null){
         //Get all leagues for a sport
-        $stmt = $conn->prepare("SELECT * from leagues JOIN team_membership JOIN sports WHERE SportName=?");
+        $stmt = $conn->prepare("SELECT * FROM leagues JOIN sports ON leagues.SportID=sports.SportID WHERE SportName=?");
         $stmt->execute([$sportName]);
     }
     else{
@@ -88,8 +88,7 @@ function get_teams($conn, $leagueID, $userID){
     return $teams;
 }
 
-function get_league_by_id($conn, $leagueID)
-{
+function get_league_by_id($conn, $leagueID){
 }
 
 function user_exists($conn, $email){
@@ -110,7 +109,7 @@ function create_user($conn, $user){
 }
 
 function create_game($conn, $game){
-    $stmt = $conn->prepare("INSERT INTO games (AteamID, BteamID, AteamScore, AteamScore, Date) VALUES (?, ?, ?, ?, ?)");
+    $stmt = $conn->prepare("INSERT INTO games (AteamID, BteamID, AteamScore, BteamScore, Date) VALUES (?, ?, ?, ?, ?)");
     $stmt->bindParam(1, $game->aTeamID);
     $stmt->bindParam(2, $game->bTeamID);
     $stmt->bindParam(3, $game->aTeamScore);

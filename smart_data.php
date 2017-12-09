@@ -18,18 +18,22 @@
     for($i = 0; $i < sizeof($sports); $i++){
         create_sport($conn, $sports[$i]);
     }
+    $sport_counter = 1;
     for($i = 0; $i < sizeof($sports); $i++){
         for($j = 0; $j < 4; $j++) {
             // Create dummy leagues
-            create_league($conn, "{$sports[$i]}_L{$j}", $i + 1);
+            create_league($conn, "{$sports[$i]}_L{$j}", $sport_counter);
         }
+        $sport_counter++;
     }
+    $league_counter = 1;
     for($i = 0; $i < sizeof($sports); $i++){
         for($j = 0; $j < 4; $j++) {
             for ($k = 0; $k < 4; $k++) {
                 // Create dummy teams
-                create_team($conn, "{$sports[$i]}_L{$j}_T{$k}", $j + 1);
+                create_team($conn, "{$sports[$i]}_L{$j}_T{$k}", $league_counter);
             }
+            $league_counter++;
         }
     }
 

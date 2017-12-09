@@ -21,13 +21,13 @@
             <?php
                 $conn = connect_db();
                 $sport_name = $_GET['sport'];
-                $users = get_user_by_id($conn, $teamID);
-                foreach($users as $user) {
+                $teams = get_user_by_id($conn, $teamID);
+                foreach($teams as $team) {
                     $firstName = $user["FirstName"];
                     $lastName = $user["LastName"];
                     echo "<tr>
-                            <td>$firstName</td>
-                            <td>$lastName</td>
+                            <td>$TeamID</td>
+                            <td>$UserID</td>
                           </tr>";
                 }
             ?>

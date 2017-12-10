@@ -24,6 +24,11 @@ function join_Team($conn, $userID, $teamID)  {
     return $stmt->execute();
 }
 
+function leave_Team($conn, $userID, $teamID)  {
+    $stmt = $conn->prepare("DELETE FROM team_membership WHERE UserID = $userID AND TeamID = $teamID");
+    return $stmt->execute();
+}
+
 function get_user_by_id($conn, $teamID){
     $stmt = $conn->prepare("SELECT DISTINCT users.* from users JOIN team_membership ON users.UserID=team_membership.UserID WHERE TeamID=?");
     $stmt->execute([$teamID]);

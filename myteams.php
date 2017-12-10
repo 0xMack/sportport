@@ -5,6 +5,7 @@
         <?php
         $conn = connect_db();
         $teams = get_teams($conn, null, $_SESSION['userID']);
+
         foreach($teams as $team) {
             $sportName = $team["SportName"];
             $sportImg = strtolower($sportName);
@@ -13,6 +14,9 @@
             $teamID = $team["TeamID"];
             $teamName = $team["TeamName"];
             $roster = get_user_by_id($conn, $teamID);
+
+
+
             echo "
                 <table id=\"main\">
                     <tr>
@@ -20,7 +24,17 @@
                         <th>Sport: $sportName</th>
                         <th>League: $leagueName</th>
                         <th>Team: $teamName</th>
-                        <th><a href='team.php?sport=$sportName&leagueid=$leagueID&teamid=$teamID' type='button' class='btn btn-info'>Team Info</a></th>
+                        <th><a href='team.php?sport=$sportName&leagueid=$leagueID&teamid=$teamID' type='button' class='btn btn-info'>Team Info</a></th>";
+      ?>
+                        <th>
+                          <form method="post" action="php/leaveteam.php">
+                            <input name='leaveTeam' type='submit' class='btn btn-info' value="Leave">
+                            <?php
+                              //$teamID = $_GET['teamid'];
+                              echo "<input name=\"myteam\" type=\"hidden\" value=\"$teamID\">";
+                             ?>
+                          </form>
+                        </th>
                     </tr>
                     <tr>
                         <td>
@@ -28,7 +42,7 @@
                                 <tr>
                                   <th>Team Roster</th>
                                 </tr>
-                                ";
+  <?php
             foreach($roster as $player) {
                 $playerName = $player["FirstName"];
                 echo "

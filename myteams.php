@@ -7,6 +7,7 @@
         $teams = get_teams($conn, null, $_SESSION['userID']);
         foreach($teams as $team) {
             $sportName = $team["SportName"];
+            $sportImg = strtolower($sportName);
             $leagueName = $team["LeagueName"];
             $leagueID = $team["LeagueID"];
             $teamID = $team["TeamID"];
@@ -15,7 +16,7 @@
             echo "
                 <table id=\"main\">
                     <tr>
-                        <th class=\"sport-image\" rowspan=\"3\"><img src=\"img/sports/$sportName.png\" alt=\"$sportName\" height=100 width=100></th>
+                        <th class=\"sport-image\" rowspan=\"3\"><img src=\"img/sports/$sportImg.png\" alt=\"$sportName\" height=100 width=100></th>
                         <th>Sport: $sportName</th>
                         <th>League: $leagueName</th>
                         <th>Team: $teamName</th>

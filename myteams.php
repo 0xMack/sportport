@@ -20,6 +20,7 @@
                         <th>Sport: $sportName</th>
                         <th>League: $leagueName</th>
                         <th>Team: $teamName</th>
+                        <th><a href='team.php?sport=$sportName&leagueid=$leagueID&teamid=$teamID' type='button' class='btn btn-info'>Team Info</a></th>
                     </tr>
                     <tr>
                         <td>
@@ -41,6 +42,7 @@
                         </td>
                     </tr>
                 </table>
+                <hr>
                 ";
         }
         ?>

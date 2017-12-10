@@ -3,7 +3,7 @@
     require_once('php/dto/game.php');
     require_once('php/database.php');
     $conn = connect_db();
-    $max_users = 256;
+    $max_users = 25;
     // Create dummy users
     for($i = 1; $i < $max_users; $i++){
         $user = new User("e{$i}@gmail.com", "first{$i}", "last{$i}", "1994/05/01");

@@ -31,12 +31,12 @@ if($_POST['formSubmit'] == "Register"){
         $user->init_password($password);
         if(create_user($conn, $user)){
             $message="Congratulations on your new account!";
-            $_SESSION['loggedin'] = true;
+            //$_SESSION['loggedin'] = true;
             $_SESSION['userID'] = $user->userID;
             $_SESSION['firstName'] = $user->firstName;
             $_SESSION['lastName'] = $user->lastName;
             $_SESSION['dob'] = $user->dob;
-            header("Location: ../profile.php");
+            header("Location: ../login.php");
         }
     }
 }
